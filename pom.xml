@@ -18,10 +18,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<sonar.coverage.exclusions>
-			**/dto/*,
-			**/entity/*,
-			**/config/*,
-			**/constant/*
+			**/dto/*,**/entity/*,**/config/*,
+			**/constant/*,**/exception/*, **/common/*
 		</sonar.coverage.exclusions>
 	</properties>
 
@@ -69,8 +67,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-
-
 		</dependency>
 	</dependencies>
 	<distributionManagement>
