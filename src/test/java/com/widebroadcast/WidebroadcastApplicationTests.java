@@ -1,5 +1,7 @@
 package com.widebroadcast;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class WidebroadcastApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void applicationTest() {
+		WidebroadcastApplication.main(new String[] {});
+		assertTrue(true);
 	}
 
 }

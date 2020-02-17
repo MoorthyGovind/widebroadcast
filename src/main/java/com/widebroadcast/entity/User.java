@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.context.support.BeanDefinitionDsl.Role;
+import com.widebroadcast.common.WideBroadCastEnum.Role;
 
 import lombok.Data;
 
