@@ -21,9 +21,9 @@ public class AppConstant {
 
 	// User
 	public static final String USER_NOT_FOUND = "User not found";
-	public static final String USER_DETAIL_NOT_FOUND = "User Detail not found";
-	public static final Integer SUCCESS_STATUS_CODE = 200;
 	public static final String LOGIN_SCCUESS_MESSAGE = "User Login Successfully";
 
-	
+	public static final String PHONE_NUMBER_SHOULD_BE_LENGTH = "Phone Number shoulb be 10 digits";
+	public static final String CREDENTIAL_SHOULD_BE_NOT_NULL = "Password should be not null";
+
 }
