@@ -15,7 +15,7 @@ public class PlanType {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer planTypeId;
-	private String planName;
-	private Double charges;
+	private String planTypeName;
+	private Double price;
 
 }
