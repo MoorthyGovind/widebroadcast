@@ -12,7 +12,7 @@ package com.widebroadcast.common;
 public class WideBroadCastEnum {
 
 	/**
-	 * Maintaining the role type such as admin and user
+	 * Maintaining the role type such as admin and sales manager
 	 * 
 	 * @author Amala
 	 * @since 17-02-2020
@@ -22,7 +22,4 @@ public class WideBroadCastEnum {
 
 	}
 
-	
-
-	
 }
