@@ -10,5 +10,6 @@ public class CreateSlotRequestDto {
 	private String programmeName;
 	private LocalDateTime slotFromDateTime;
 	private LocalDateTime slotToDateTime;
+	private Integer planTypeId;
 
 }
