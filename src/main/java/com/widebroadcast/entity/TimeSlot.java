@@ -17,7 +17,7 @@ public class TimeSlot {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer timeSlotId;
-	private LocalDateTime programName;
+	private LocalDateTime slotDateTime;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
