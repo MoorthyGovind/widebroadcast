@@ -6,15 +6,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.widebroadcast.constant.AppConstant;
 import com.widebroadcast.dto.CreateSlotRequestDto;
 import com.widebroadcast.dto.ResponseDto;
 import com.widebroadcast.entity.PlanType;
 import com.widebroadcast.entity.Slot;
 import com.widebroadcast.entity.TimeSlot;
+import com.widebroadcast.exception.SlotNotAvailableException;
 import com.widebroadcast.repository.SlotRepository;
 import com.widebroadcast.repository.TimeSlotRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class SlotServiceImpl implements SlotService {
 
 	@Autowired
@@ -24,9 +29,11 @@ public class SlotServiceImpl implements SlotService {
 	SlotRepository slotRepository;
 
 	@Override
-	public ResponseDto createSlot(CreateSlotRequestDto createSlotRequestDto) {
-		if (!timeSlotRepository.findBySlotDateTime(createSlotRequestDto.getSlotFromDateTime()).isPresent()) {
-
+	public ResponseDto createSlot(CreateSlotRequestDto createSlotRequestDto) throws SlotNotAvailableException {
+		log.info("SlotServiceImpl createSlot ---> creating slots");
+		if (timeSlotRepository.findBySlotDateTime(createSlotRequestDto.getSlotFromDateTime()).isPresent()) {
+			log.info("SlotServiceImpl createSlot ---> SlotNotAvailableException occured");
+			throw new SlotNotAvailableException(AppConstant.SLOT_ALREADY_CREATED);
 		}
 		PlanType plantype = new PlanType();
 		plantype.setPlanTypeId(createSlotRequestDto.getPlanTypeId());
@@ -46,6 +53,7 @@ public class SlotServiceImpl implements SlotService {
 			timeSlots.add(timeSlot);
 		}
 		timeSlotRepository.saveAll(timeSlots);
+		log.info("SlotServiceImpl createSlot ---> slots created");
 		return new ResponseDto();
 	}
 

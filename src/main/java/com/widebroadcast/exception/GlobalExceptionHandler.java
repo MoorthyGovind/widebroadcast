@@ -51,5 +51,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 		errorDto.setStatusCode(HttpStatus.NOT_FOUND.value());
 		return ResponseEntity.status(HttpStatus.OK).body(errorDto);
 	}
+	
+	@ExceptionHandler(SlotNotAvailableException.class)
+	public ResponseEntity<ResponseDto> slotNotAvailableException(SlotNotAvailableException ex) {
+		ResponseDto errorDto = new ResponseDto();
+		errorDto.setMessage(ex.getMessage());
+		errorDto.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return ResponseEntity.status(HttpStatus.OK).body(errorDto);
+	}
 
 }

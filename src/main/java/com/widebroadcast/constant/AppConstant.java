@@ -25,5 +25,8 @@ public class AppConstant {
 
 	public static final String PHONE_NUMBER_SHOULD_BE_LENGTH = "Phone Number shoulb be 10 digits";
 	public static final String CREDENTIAL_SHOULD_BE_NOT_NULL = "Password should be not null";
+	
+	//slot
+	public static final String SLOT_ALREADY_CREATED = "slot already created";
 
 }
